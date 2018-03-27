@@ -18,7 +18,7 @@ script:
     - sed -i "s,$LINUX_21,$ANDROID_21," aws-android-sdk-kinesisvideo/pom.xml
     - sed -i "s,$LINUX_21,$ANDROID_21," aws-android-sdk-pinpoint/pom.xml
     - cat aws-android-sdk-kinesisvideo/pom.xml
-    - mvn clean install -Dmaven.javadoc.skip=true cobertura:cobertura
+    - mvn clean install -Dmaven.javadoc.skip=false cobertura:cobertura
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
